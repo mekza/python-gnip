@@ -1,6 +1,4 @@
 # coding=utf-8
-import os
-
 from setuptools import find_packages
 from setuptools import setup
 
@@ -9,8 +7,8 @@ with open('README.rst') as readme:
 
 setup(
     name="python-gnip",
-    version="0.0.1",
-    description="Gnip API wrapper",
+    version="0.0.2",
+    description="Gnip Powertrack Wrapper",
     long_description=long_description,
     author="Bright SAS",
     author_email="oss@brig.ht",

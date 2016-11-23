@@ -87,21 +87,28 @@ class Gnip(object):
                                                                             self.source)
         return self.make_request(endpoint, "GET")
 
-    def add_rules(self, *rules):
+    def add_rules(self, rules):
+        if not isinstance(rules, list):
+            raise AttributeError("Rules have to be in a list")
+
         endpoint = "rules/{0}/accounts/{1}/publishers/{2}/prod.json".format(self.service,
                                                                             self.account_name,
                                                                             self.source)
         payload = {
-            "rules": rules[0]
+            "rules": rules
         }
+
         return self.make_request(endpoint, "POST", payload=payload)
 
-    def delete_rules(self, *rules):
+    def delete_rules(self, rules):
+        if not isinstance(rules, list):
+            raise AttributeError("Rules have to be in a list")
+
         endpoint = "rules/{0}/accounts/{1}/publishers/{2}/prod.json".format(self.service,
                                                                             self.account_name,
                                                                             self.source)
         payload = {
-            "rules": rules[0]
+            "rules": rules
         }
         params = {
             "_method": "delete"

@@ -103,8 +103,13 @@ class Gnip(object):
         payload = {
             "rules": rules[0]
         }
-        print(payload)
-        return self.make_request(endpoint, "DELETE", payload=payload)
+        params = {
+            "_method": "delete"
+        }
+        return self.make_request(endpoint,
+                                 "POST",
+                                 params=params,
+                                 payload=payload)
 
     def connect_stream(self):
         headers = {
@@ -120,5 +125,8 @@ class Gnip(object):
             auth = (self.login, self.password)
 
         # TODO: Refactor stream handling
-        stream = requests.get(self.stream_url, stream=True, auth=auth, headers=headers)
+        stream = requests.get(self.stream_url,
+                              stream=True,
+                              auth=auth,
+                              headers=headers)
         return stream

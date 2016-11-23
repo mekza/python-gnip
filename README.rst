@@ -27,7 +27,7 @@ Usage
 
 
 Rules
-~~~~~~~~~~
+~~~~~
 
 
 .. code:: python
@@ -40,7 +40,8 @@ Rules
     )
     print(g.get_rules())
 
-### Add and Delete rules ###
+Add and Delete rules
+````````````````````
 
 .. code:: python
 
@@ -56,7 +57,7 @@ Rules
     g.delete_rules([{"value":"rule1","tag":"tag1"}, {"value":"rule2"}])
 
 Stream
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
 
 .. code:: python
 

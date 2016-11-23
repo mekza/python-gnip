@@ -76,7 +76,6 @@ def get_error(response):
 
 
 def raise_errors_on_failure(response):
-    print(response.text)
     if response.status_code >= 400:
         msg = get_error(response)
         search_for_exception(response.status_code, msg)
